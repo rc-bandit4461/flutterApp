@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hellp_world/main-drawer.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'dart:async';
 
 class Camera extends StatefulWidget {
   @override
@@ -13,7 +14,6 @@ class Camera extends StatefulWidget {
 class _CameraState extends State<Camera> {
   String scannedText;
   File imageFile;
-
   VisionText visionTextOCR;
 
   @override
@@ -23,14 +23,14 @@ class _CameraState extends State<Camera> {
       appBar: AppBar(
         title: Text(
           "Camera",
-          style: TextStyle(backgroundColor: Colors.red),
         ),
       ),
       body: Column(
-         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            width: double.infinity, padding: EdgeInsets.all(10),
+            width: double.infinity,
+            padding: EdgeInsets.all(10),
             child: MaterialButton(
               color: Colors.lightBlue,
               child: Text(
@@ -51,27 +51,21 @@ class _CameraState extends State<Camera> {
               child: Text("${scannedText == null ? "" : scannedText}"),
             ),
           ),
-          imageFile == null
-              ? Text("Pas dimage")
-              : Image.file(
-                  imageFile,
-                  height: 300,
-                )
+          imageFile == null ? Text("Pas dimage") : FileImage(imageFile)
         ],
       ),
     );
   }
 
   Future<VisionText> textRecognition(File imageFile) {
-    // final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(imageFile);
     final FirebaseVisionImage visionImage =
         FirebaseVisionImage.fromFile(imageFile);
     final TextRecognizer textRecognizer =
         FirebaseVision.instance.textRecognizer();
-    // final Future <VisionText> visionText
-    // final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(imageFile);
+
     final Future<VisionText> visionText =
         textRecognizer.processImage(visionImage);
+
     return visionText;
   }
 
@@ -90,10 +84,12 @@ class _CameraState extends State<Camera> {
                     File croppedFile =
                         await ImageCropper.cropImage(sourcePath: file.path);
                     VisionText visionText = await textRecognition(croppedFile);
-                        scannedText = visionText.text;
+                    scannedText = visionText.text;
+                    visionTextOCR = visionText;
+                    print("Scanned TEXT--------->" + scannedText);
+
                     setState(() {
                       imageFile = file;
-                      visionTextOCR = visionText;
                     });
                   },
                   child: Text("Gallery")),
@@ -104,14 +100,18 @@ class _CameraState extends State<Camera> {
                         source: ImageSource.camera,
                         maxWidth: 400,
                         maxHeight: 400);
+
                     File croppedFile =
                         await ImageCropper.cropImage(sourcePath: file.path);
+
                     VisionText visionText = await textRecognition(croppedFile);
+
                     print(visionText.text);
                     setState(() {
-                      imageFile = croppedFile;
                       visionTextOCR = visionText;
                       scannedText = visionText.text;
+                      imageFile = croppedFile;
+                      print("Scanned TEXT--------->" + scannedText);
                     });
                   },
                   child: Text("Camera"))

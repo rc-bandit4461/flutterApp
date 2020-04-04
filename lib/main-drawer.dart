@@ -23,8 +23,6 @@ class MainDrawer extends StatelessWidget {
             ListTile(
               title: Text(
                 "Quiz",
-                style: TextStyle(
-                    backgroundColor: Colors.cyan, color: Colors.deepOrange),
               ),
               onTap: () {
                 print("Clicked on quiz");
@@ -39,6 +37,9 @@ class MainDrawer extends StatelessWidget {
 //                Navigator.push(
 //                    context, MaterialPageRoute(builder: (context) => Quiz()));
               },
+            ),
+            Divider(
+              color: Colors.lightBlue,
             ),
             ListTile(
               title: Text("Camera"),

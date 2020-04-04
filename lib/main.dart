@@ -5,7 +5,6 @@ import './quiz.dart';
 import './weather.dart';
 import './Gallery.dart';
 import './camera.dart';
-import './Camera2.dart';
 import './main-drawer.dart';
 import './qrcode-scanner.dart';
 
@@ -16,7 +15,6 @@ void main() {
     '/quiz': (BuildContext context) => Quiz(),
     '/gallery': (BuildContext context) => Gallery(),
     '/camera':(BuildContext context)=> Camera(),
-    '/camera2':(BuildContext context)=> Camera2(),
     '/qrcode':(BuildContext context)=> QRScan(),
   }));
 }
@@ -24,15 +22,15 @@ void main() {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    //!TODO: implement build
     return new Scaffold(
       drawer: MainDrawer(),
       appBar: new AppBar(
-        title: Text('myapp'),
+        title: Text('Home'),
       ),
       body: Center(
         child: new Text(
-          'boo',
+          'Welcome',
           style: TextStyle(fontSize: 40, color: Colors.blue),
         ),
       ),

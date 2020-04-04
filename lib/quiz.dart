@@ -41,11 +41,9 @@ class _QuizState extends State<Quiz> {
     return Scaffold(
         drawer: MainDrawer(),
         appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Quiz",
-              style: TextStyle(backgroundColor: Colors.grey),
-            ),
+          title: Text(
+            "Quiz",
+            textAlign: TextAlign.center,
           ),
         ),
         body: currentQuestion >= quiz.length

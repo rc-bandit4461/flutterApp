@@ -46,9 +46,6 @@ class _GalleryState extends State<Gallery> {
                             builder: (BuildContext context) => GalleryPictures(
                                   keyword: widget.keyword,
                                 )));
-//                      setState(() {
-//                    if (widget.keyword != null) getData(widget.keyword);
-//                      });
                   },
                 ),
               ),

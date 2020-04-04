@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
 import 'package:hellp_world/main-drawer.dart';
-//import 'package:image_picker/image_picker.dart';
-//import 'package:qrscan/qrscan.dart' as scanner;
+
 
 class QRScan extends StatefulWidget {
   @override
@@ -25,9 +24,11 @@ class _QRScanState extends State<QRScan> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Text("Click"),
-          onPressed: () {
+          onPressed: () async {
             print("clicked");
 //            return scanQR_qrscan();
+//              result = await QrScanner.scan();
+
             return scanQR();
           },
         ),
@@ -35,17 +36,6 @@ class _QRScanState extends State<QRScan> {
       ),
     );
   }
-
-//  void scanQR_qrscan() async {
-//    File file = await ImagePicker.pickImage(source: ImageSource.camera);
-//    print(file);
-//    print(file.path);
-//    String barcode = await scanner.scanPath(file.path);
-//        setState(() {
-//          result = barcode;
-//        });
-//    }
-
   Future scanQR() async {
     try {
       String scanResult = await BarcodeScanner.scan();
@@ -63,7 +53,7 @@ class _QRScanState extends State<QRScan> {
         });
       }
     } on FormatException catch (e) {
-      result = "Yo pressed de back button befor scanning";
+      result = "You pressed de back button before scanning";
     } catch (e) {
       setState(() {
         result = "Other error";
