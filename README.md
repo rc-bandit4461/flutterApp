@@ -1,6 +1,6 @@
 # a Hello World Flutter project!
 
-This is my first flutter project. Check the screenshots down. It contains several functionnalities:
+This is my first flutter project. Check the screenshots down. In this project, I fiddled with many components. The result is this app that contains the following functionnalities:
 
 - a drawer
 - a QR code scanner
