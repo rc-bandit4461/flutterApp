@@ -1,4 +1,4 @@
-# hellp_world
+# a Hello World Flutter project!
 
 This is my first flutter project. Check the screenshots down. It contains several functionnalities:
 
