@@ -15,7 +15,7 @@ class MainDrawer extends StatelessWidget {
               child: Center(
                 child: CircleAvatar(
 //                backgroundImage: NetworkImage("https://picsum.photos/200"),
-                  backgroundImage: AssetImage("images/logo.png"),
+                  backgroundImage: AssetImage("assets/images/logo.png"),
                   radius: 70,
                 ),
               ),

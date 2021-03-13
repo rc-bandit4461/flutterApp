@@ -83,7 +83,7 @@ class _WeatherDetailsState extends State<WeatherDetails> {
                               padding: const EdgeInsets.all(8.0),
                               child: CircleAvatar(
                                 radius: 25,
-                                backgroundImage: AssetImage("images/_" +
+                                backgroundImage: AssetImage("assets/icons/_" +
                                     weatherData[index]['weather'][0]['icon'] +
                                     ""
                                         ".png"),
