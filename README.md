@@ -1,6 +1,32 @@
 # hellp_world
 
-A new Flutter project.
+This is my first flutter project. Check the screenshots down. It contains several functionnalities:
+
+- a drawer
+- a QR code scanner
+- text rcognition using firebase
+- Image search using Unsplash API
+- Weather forecast
+- A little quiz game
+  A new Flutter project.
+
+## Screenshots
+
+1. Simple Welcome page
+   ![The welcome screen](./assets/screenshots/welcome.jpg)
+2. Drawer
+   ![The drawer](./assets/screenshots/drawer.jpg)
+3. QR code scanner
+   ![QR Code scanner](./assets/screenshots/qr_code_scanner.jpg)
+4. Text recognition
+   ![Text recognition](./assets/screenshots/text_recognition.png)
+5. Weather forecast
+   ![Weather forecast](./assets/screenshots/weather.png)
+6. Image Search
+   ![Cats Image search using Unsplash](./assets/screenshots/Gallery.png)
+   ![Cats Image search using Unsplash 2](./assets/screenshots/Gallery2.jpg)
+7. Quiz
+   ![Quiz](./assets/screenshots/quiz.png)
 
 ## Getting Started
 
