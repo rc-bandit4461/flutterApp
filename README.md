@@ -5,7 +5,7 @@ This is my first flutter project. Check the screenshots down. It contains severa
 - a drawer
 - a QR code scanner
 - text rcognition using firebase
-- Image search using Unsplash API
+- Image search using Pixabay API
 - Weather forecast
 - A little quiz game
   A new Flutter project.
@@ -23,8 +23,8 @@ This is my first flutter project. Check the screenshots down. It contains severa
 5. Weather forecast
    ![Weather forecast](./assets/screenshots/weather.png)
 6. Image Search
-   ![Cats Image search using Unsplash](./assets/screenshots/Gallery.png)
-   ![Cats Image search using Unsplash 2](./assets/screenshots/Gallery2.jpg)
+   ![Cats Image search using Pixabay](./assets/screenshots/Gallery.png)
+   ![Cats Image search using Pixabay 2](./assets/screenshots/Gallery2.jpg)
 7. Quiz
    ![Quiz](./assets/screenshots/quiz.png)
 
